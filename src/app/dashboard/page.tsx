@@ -5,13 +5,14 @@ import View from "ol/View";
 import TileLayer from "ol/layer/Tile";
 import OSM from "ol/source/OSM";
 import "ol/ol.css"; // Import OpenLayers CSS
+import {RiInformationFill} from  '@remixicon/react'
 
 const MapComponent = () => {
-  const mapContainerRef = useRef(null); // Ref for the DOM element
-  const mapRef = useRef<Map | null>(null); // Ref for the Map instance
+  const mapContainerRef = useRef(null)
+  const mapRef = useRef<Map | null>(null)
 
   useEffect(() => {
-    // Only create map if it doesn't exist
+
     if (!mapRef.current && mapContainerRef.current) {
       mapRef.current = new Map({
         target: mapContainerRef.current,
@@ -21,9 +22,9 @@ const MapComponent = () => {
           }),
         ],
         view: new View({
-          center: [85.324, 27.7172], // These should be in EPSG:4326 (lon, lat)
+          center: [85.324, 27.7172],
           zoom: 7,
-          projection: "EPSG:4326", // Specify projection explicitly
+          projection: "EPSG:4326",
         }),
       });
     }
@@ -31,27 +32,31 @@ const MapComponent = () => {
     // Cleanup function
     return () => {
       if (mapRef.current) {
-        mapRef.current.setTarget(null); // Properly dispose of the map
+        mapRef.current.setTarget(null);
         mapRef.current = null;
       }
     };
-  }, []); // Empty dependency array since we only want this to run once
+  }, []);
 
   return (
     <div className="flex ">
-      <div className="bg-gray-100">
-        <ul className="flex flex-row gap-10 h-13 justify-around bg-rose-400 w-135 items-center shadow-lg">
-          <li className="bg-blue-500 font-bold text-xl  text-white h-13 flex justify-center items-center w-40">
+      <div className="bg-gray-100 shadow">
+        <ul className="flex flex-row gap-10 h-11.5 justify-around bg-rose-400 w-131 items-center shadow-lg">
+          <li className="bg-blue-500 font-bold text-xl  text-white h-11.5 flex justify-center items-center w-40">
             Bipad Portal
           </li>
-          <li className=" font-bold text-xl  text-white h-13 flex justify-center items-center w-75">
+          <li className=" font-bold text-xl  text-white h-11.5 flex justify-center items-center w-75">
             National
           </li>
         </ul>
+        <div>
+          <h1 className='text-sm flex gap-3'><RiInformationFill size={17}/>Showing Data From <b>2025-04-02</b> to <b>2025-04-09</b></h1>
+          <h1 className='text-sm flex gap-3'><RiInformationFill size={17}/>Showing Data From <b>2025-04-02</b> to <b>2025-04-09</b></h1>
+        </div>
       </div>
       <div
         ref={mapContainerRef}
-        className="w-234.5 h-[840px] relative " // Adjusted classes for better visibility
+        className="w-240 h-[840px] relative " // Adjusted classes for better visibility
       />
     </div>
   );

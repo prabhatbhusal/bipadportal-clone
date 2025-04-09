@@ -13,7 +13,7 @@ const Navbar = () => {
     { name: "Realtime", url: "/realtime", imgurl: "/signal-tower-fill.svg" },
     { name: "Profile", url: "/profile", imgurl: "/bar-chart-2-fill.svg" },
     { name: "Riskinfo", url: "/riskinfo", imgurl: "/asterisk.svg" },
-    { name: "Dataarchive", url: "/datarchive", imgurl: "/archive-fill.svg" },
+    { name: "DataArchive", url: "/datarchive", imgurl: "/archive-fill.svg" },
     { name: "VisRisk", url: "/visriks", imgurl: "/eye-fill.svg" },
     { name: "IBF", url: "/ibf", imgurl: "/cloud-fill.svg" },
     { name: "Menu", url: "/button", imgurl: "/more-2-fill.svg" },
@@ -26,7 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='flex flex-col justify-center font-semibold text-[11px] overflow-x-hidden'>
+    <nav className='flex flex-col justify-center font-semibold text-[9px] overflow-x-hidden'>
       <ul className='h-[100%] flex flex-col justify-center items-center ml-370 text-gray-500 fixed z-1 mt-210'>
         {links.map((link, idx) => (
           <li
@@ -45,10 +45,10 @@ const Navbar = () => {
                   alt={link.name}
                   height={20}
                   width={20}
-                  className={activeIndex === idx ? 'filter invert' : ''} // Better for SVG color change
+                  className={`hover:fill-rose-400 ${activeIndex === idx ? 'filter invert' : ''}`} // Better for SVG color change
                 />
               </span>
-              <span className={activeIndex === idx ? 'text-white' : 'text-gray-500'}>
+              <span className={activeIndex === idx ? 'text-white' : 'text-gray-500 hover  hover:text-rose-400'}>
                 {link.name}
               </span>
             </Link>
