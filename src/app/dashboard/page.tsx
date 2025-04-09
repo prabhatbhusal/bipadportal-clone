@@ -5,7 +5,7 @@ import View from "ol/View";
 import TileLayer from "ol/layer/Tile";
 import OSM from "ol/source/OSM";
 import "ol/ol.css"; // Import OpenLayers CSS
-import {RiInformationFill} from  '@remixicon/react'
+import {RiInformationFill,RiBarChart2Fill, RiCircleFill, RiSquareFill, RiGridLine} from  '@remixicon/react'
 
 const MapComponent = () => {
   const mapContainerRef = useRef(null)
@@ -51,7 +51,18 @@ const MapComponent = () => {
         </ul>
         <div>
           <h1 className='text-sm flex gap-3'><RiInformationFill size={17}/>Showing Data From <b>2025-04-02</b> to <b>2025-04-09</b></h1>
-          <h1 className='text-sm flex gap-3'><RiInformationFill size={17}/>Showing Data From <b>2025-04-02</b> to <b>2025-04-09</b></h1>
+          <h1 className='text-sm flex gap-3'><RiInformationFill size={17}/>Data Source<b>Realtime Module</b></h1>
+
+        </div>
+        <div className='flex justify-between items-center bg-gray-200'>
+        <div className='flex justify-around items-center'>
+          <div className="bg-blue-900 w-25 h-20 border-1 border-gray-200 flex flex-col justify-center items-center"><h1>x</h1><p>Alert<RiCircleFill size={20}/></p></div>
+          <div className="bg-blue-900 w-25 h-20 border-1 border-gray-200 flex flex-col justify-center items-center"><h1>x</h1><p>Events<RiSquareFill size={20}/></p></div>
+          <div className="bg-blue-900 w-35 h-20 border-1 border-gray-200 flex flex-col justify-center items-center"><h1>x</h1><p>Visualization<RiBarChart2Fill size={20}/></p></div>
+        </div>
+        <div>
+          <button><RiGridLine color="gray"/></button>
+        </div>
         </div>
       </div>
       <div

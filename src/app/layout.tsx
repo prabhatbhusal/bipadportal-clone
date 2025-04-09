@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-poppins`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-Poppins`}
       >
 
         <Navbar/>
