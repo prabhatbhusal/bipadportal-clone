@@ -32,9 +32,5 @@ Ensure the following are installed:
 1. **Clone the Repository**:
 
    ```bash
-<<<<<<< HEAD
-   git clone https://github.com/prabhatbhusal/bipad-portal-clone.git
-=======
    git clone https://github.com/yourusername/bipad-portal-clone.git
->>>>>>> e5741b7 (Files added)
    cd bipad-portal-clone
