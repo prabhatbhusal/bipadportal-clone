@@ -8,7 +8,7 @@ import "ol/ol.css"; // Import OpenLayers CSS
 
 const MapComponent = () => {
   const mapContainerRef = useRef(null); // Ref for the DOM element
-  const mapRef = useRef(null); // Ref for the Map instance
+  const mapRef = useRef<Map | null>(null); // Ref for the Map instance
 
   useEffect(() => {
     // Only create map if it doesn't exist
@@ -39,12 +39,15 @@ const MapComponent = () => {
 
   return (
     <div className="flex ">
-      <div className='bg-black '>
-        <ul className='flex flex-row gap-10 h-13 justify-around bg-rose-400 w-135 items-center shadow-lg'>
-          <li className='bg-blue-500 font-bold text-xl  text-white h-13 flex justify-center items-center w-40'>Bipad Portal</li>
-          <li className=' font-bold text-xl  text-white h-13 flex justify-center items-center w-75'>National</li>
+      <div className="bg-gray-100">
+        <ul className="flex flex-row gap-10 h-13 justify-around bg-rose-400 w-135 items-center shadow-lg">
+          <li className="bg-blue-500 font-bold text-xl  text-white h-13 flex justify-center items-center w-40">
+            Bipad Portal
+          </li>
+          <li className=" font-bold text-xl  text-white h-13 flex justify-center items-center w-75">
+            National
+          </li>
         </ul>
-
       </div>
       <div
         ref={mapContainerRef}

@@ -26,7 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='flex flex-col justify-center font-semibold text-xs overflow-x-hidden'>
+    <nav className='flex flex-col justify-center font-semibold text-[11px] overflow-x-hidden'>
       <ul className='h-300 flex flex-col justify-center items-center ml-365 text-gray-500 fixed z-1 mt-210'>
         {links.map((link, idx) => (
           <li

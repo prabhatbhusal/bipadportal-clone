@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bipadportal-clone",
+  title: "Dashboard",
   description: "Developed By Prabhat",
 };
 
