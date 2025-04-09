@@ -51,7 +51,7 @@ const MapComponent = () => {
       </div>
       <div
         ref={mapContainerRef}
-        className="w-230 h-[840px] relative " // Adjusted classes for better visibility
+        className="w-234.5 h-[840px] relative " // Adjusted classes for better visibility
       />
     </div>
   );

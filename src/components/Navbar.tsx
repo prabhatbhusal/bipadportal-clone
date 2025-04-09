@@ -27,11 +27,11 @@ const Navbar = () => {
 
   return (
     <nav className='flex flex-col justify-center font-semibold text-[11px] overflow-x-hidden'>
-      <ul className='h-300 flex flex-col justify-center items-center ml-365 text-gray-500 fixed z-1 mt-210'>
+      <ul className='h-[100%] flex flex-col justify-center items-center ml-370 text-gray-500 fixed z-1 mt-210'>
         {links.map((link, idx) => (
           <li
             key={idx}
-            className={`w-20 h-19  flex flex-col justify-center items-center shadow-sm overflow-x-hidden cursor-pointer ${
+            className={`w-15 h-20  flex flex-col justify-center items-center shadow-sm overflow-x-hidden cursor-pointer ${
               activeIndex === idx
                 ? 'bg-rose-400 text-white'
                 : 'bg-white text-gray-500'
