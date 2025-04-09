@@ -25,5 +25,5 @@ Ensure the following are installed:
 ## Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/bipad-portal-clone.git
+   git clone https://github.com/prabhatbhusal/bipad-portal-clone.git
    cd bipad-portal-clone
