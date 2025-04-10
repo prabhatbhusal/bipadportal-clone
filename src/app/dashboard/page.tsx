@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef} from "react";
 import Map from "ol/Map";
 import View from "ol/View";
 import TileLayer from "ol/layer/Tile";
@@ -16,12 +16,9 @@ import {
 const MapComponent = () => {
   const mapContainerRef = useRef(null);
   const mapRef = useRef<Map | null>(null);
-   const [activeIndex, setActiveIndex] = useState(null);
 
-   const handleClick = (index) => {
-    setActiveIndex(index);
-    console.log('Clicked index:', index); // Add this to debug
-  };
+
+
 
   useEffect(() => {
     if (!mapRef.current && mapContainerRef.current) {
@@ -72,7 +69,7 @@ const MapComponent = () => {
         </div>
         <div className="flex justify-between items-center bg-gray-200">
           <div className="flex justify-around items-center">
-            <button className="w-25 h-20 border-1 border-gray-300 flex flex-col justify-center items-center">
+            <button className="w-20 h-20 border-1 border-gray-300 flex flex-col justify-center items-center">
               <h1 className="cursor-pointer">x</h1>
               <p>
                 Alert

@@ -9,16 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.7",
+    "@radix-ui/react-slot": "^1.2.0",
     "@remixicon/react": "^4.6.0",
     "@tanstack/react-query": "^5.72.2",
     "bootstrap": "^5.3.5",
     "chart.js": "^4.4.8",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.487.0",
     "next": "15.2.4",
     "ol": "^10.5.0",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^19.0.0",
-    "react-model": "^4.3.1"
+    "react-model": "^4.3.1",
+    "tailwind-merge": "^3.2.0",
+    "tw-animate-css": "^1.2.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
