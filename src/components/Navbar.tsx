@@ -26,12 +26,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className='flex flex-col justify-center font-semibold text-[9px] overflow-x-hidden'>
-      <ul className='h-[100%] flex flex-col justify-center items-center ml-370 text-gray-500 fixed z-1 mt-210'>
+    <nav className='flex flex-col justify-center font-semibold text-[10px] overflow-x-hidden h-full bg-blue-800'>
+      <div className=''>
+      <div className=' flex flex-col justify-center items-center ml-460 text-gray-500 fixed z-1'>
         {links.map((link, idx) => (
           <li
             key={idx}
-            className={`w-15 h-20  flex flex-col justify-center items-center shadow-sm overflow-x-hidden cursor-pointer ${
+            className={`w-20 h-25  flex flex-col justify-center items-center shadow-sm overflow-x-hidden cursor-pointer ${
               activeIndex === idx
                 ? 'bg-rose-400 text-white'
                 : 'bg-white text-gray-500'
@@ -54,7 +55,8 @@ const Navbar = () => {
             </Link>
           </li>
         ))}
-      </ul>
+      </div>
+      </div>
     </nav>
   );
 };
