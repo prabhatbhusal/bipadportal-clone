@@ -124,3 +124,9 @@
     @apply bg-background text-foreground;
   }
 }
+.ol-zoom {
+  left:unset;
+  right: 100px;
+
+
+}

@@ -57,13 +57,15 @@ const MapComponent = () => {
     // Cleanup function
     return () => {
       if (mapRef.current) {
+
         mapRef.current.setTarget(null);
         mapRef.current = null;
+        
       }
     };
   }, []);
 
-  
+
   return (
     <div className="flex ">
       <div className="bg-gray-100 shadow">

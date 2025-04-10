@@ -34,7 +34,7 @@ const Navbar = () => {
     { name: "DataArchive", url: "/datarchive", imgurl: "/archive-fill.svg" },
     { name: "VisRisk", url: "/visriks", imgurl: "/eye-fill.svg" },
     { name: "IBF", url: "/ibf", imgurl: "/cloud-fill.svg" },
-    { name: "Menu", url: "/button", imgurl: "/more-2-fill.svg" },
+    { name: "Menu", url: "#", imgurl: "/more-2-fill.svg" },
     { name: "Login", url: "/login", imgurl: "/login-box-fill.svg" },
   ];
 
@@ -68,6 +68,13 @@ const Navbar = () => {
     setActiveIndex(index);
     console.log("Clicked index:", index); // Add this to debug
   };
+
+  const [isvisible,setisvisible]=useState(false)
+
+
+
+
+
 
   return (
     <nav className="flex flex-col justify-center font-bold text-[10px]  overflow-x-hidden h-full bg-blue-800">
@@ -110,36 +117,33 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
-          <div className="h-50 w-60 absolute z-100 border-1 border-gray-200 mt-202 mr-85 bg-white grid  grid-cols-3">
-            {menulinks.map((links, idx) => (
+          <div className={`h-50 w-60 absolute z-100 border-1 border-gray-200 mt-202 mr-85 bg-red-800  ${isvisible ? "grid" :"hidden"} grid-cols-3`}>
               <button
-                key={idx}
                 className="flex flex-col items-center justify-center hover:text-rose-400 cursor-pointer"
-              >{links.tag}
-                <Dialog>
-                <span><DialogTrigger>{links.title}</DialogTrigger></span>
-              <DialogContent>
-                <DialogHeader>
-                  <div className="flex gap-3 ">
-                    <div>
-                      <DialogTitle>{links.texttitle}</DialogTitle>
-                      <DialogDescription>
-                        {links.titlecontent}
-                      </DialogDescription>
-
-                      <DialogDescription>
-
-                      </DialogDescription>
-                    </div>
-                  </div>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
-
+                onClick={()=>setisvisible(isvisible)}
+              >
+                button
 
               </button>
-            ))}
+            {menulinks.map((links, idx) =>               <Dialog key={idx}>
+              <span><DialogTrigger>{links.title}</DialogTrigger></span>
+            <DialogContent>
+              <DialogHeader>
+                <div className="flex gap-3 ">
+                  <div>
+                    <DialogTitle>{links.texttitle}</DialogTitle>
+                    <DialogDescription>
+                      {links.titlecontent}
+                    </DialogDescription>
 
+                    <DialogDescription>
+
+                    </DialogDescription>
+                  </div>
+                </div>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>)}
           </div>
         </div>
       </div>
