@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
+@import "ol/ol.css";
+/* Removed invalid @custom-variant rule */
 
 /* In your global CSS file */
 .map {
@@ -118,15 +118,17 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border: var(--color-border);
+    outline: 50% solid var(--color-ring);
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
   }
 }
 .ol-zoom {
-  left:unset;
-  right: 100px;
-
+  position:absolute;
+  margin-left:1160px;
+  margin-top:1000px;
 
 }
