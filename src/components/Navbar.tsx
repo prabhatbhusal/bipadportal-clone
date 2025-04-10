@@ -25,6 +25,7 @@ const Navbar = () => {
     console.log('Clicked index:', index); // Add this to debug
   };
 
+
   return (
     <nav className='flex flex-col justify-center font-semibold text-[10px] overflow-x-hidden h-full bg-blue-800'>
       <div className=''>
@@ -55,6 +56,9 @@ const Navbar = () => {
             </Link>
           </li>
         ))}
+        <div className='h-50 w-60 absolute z-100 border-1 border-black mt-200 mr-80'>
+          <h1>Hello</h1>
+        </div>
       </div>
       </div>
     </nav>

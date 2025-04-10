@@ -16,7 +16,12 @@ import {
 const MapComponent = () => {
   const mapContainerRef = useRef(null);
   const mapRef = useRef<Map | null>(null);
-  const [value, setvalue] = useState("");
+   const [activeIndex, setActiveIndex] = useState(null);
+
+   const handleClick = (index) => {
+    setActiveIndex(index);
+    console.log('Clicked index:', index); // Add this to debug
+  };
 
   useEffect(() => {
     if (!mapRef.current && mapContainerRef.current) {
