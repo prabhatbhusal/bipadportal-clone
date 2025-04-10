@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@remixicon/react": "^4.6.0",
+    "@tanstack/react-query": "^5.72.2",
     "bootstrap": "^5.3.5",
     "chart.js": "^4.4.8",
     "next": "15.2.4",
