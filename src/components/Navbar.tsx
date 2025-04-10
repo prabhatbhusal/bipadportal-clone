@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link"; // Added Next.js Link component for navigation
-
+import Menubar from './Menubar'
+import { RiFeedbackFill } from "@remixicon/react";
 const Navbar = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -20,6 +21,12 @@ const Navbar = () => {
     { name: "Login", url: "/login", imgurl: "/login-box-fill.svg" },
   ];
 
+   const menulinks=[{
+    name:"Feedback",
+    tag:<RiFeedbackFill/>,
+
+
+   }]
   const handleClick = (index) => {
     setActiveIndex(index);
     console.log('Clicked index:', index); // Add this to debug
@@ -56,8 +63,17 @@ const Navbar = () => {
             </Link>
           </li>
         ))}
-        <div className='h-50 w-60 absolute z-100 border-1 border-black mt-200 mr-80'>
-          <h1>Hello</h1>
+         <div className='h-50 w-60 absolute z-100 border-1 border-gray-200 mt-202 mr-85 bg-white grid  grid-cols-3'>
+          <button popovertarget='feed'className='flex flex-col items-center justify-center'>
+            <RiFeedbackFill/>
+          <span id='feed' popover='auto'>Feedback</span>
+          </button>
+          <div className='flex items-center justify-center'><RiFeedbackFill/>
+          <h1>Feedback</h1></div>
+          <div className='flex items-center justify-center'><RiFeedbackFill/>
+          <h1 className='flex items-center justify-center'>Feedback</h1></div>
+          <div><RiFeedbackFill/>
+          <h1 className='flex items-center justify-center'>Feedback</h1></div>
         </div>
       </div>
       </div>
