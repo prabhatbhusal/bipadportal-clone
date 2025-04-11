@@ -1,9 +1,6 @@
 "use client"; // Indicates this is a client-side rendered component
-import { useEffect, useRef, useState } from "react";
-import Map from "ol/Map";
-import View from "ol/View";
-import TileLayer from "ol/layer/Tile";
-import OSM from "ol/source/OSM";
+import {useState } from "react";
+
 import "ol/ol.css"; // Import OpenLayers CSS
 import {
   RiInformationFill,
@@ -12,10 +9,10 @@ import {
   RiSquareFill,
   RiGridLine,
 } from "@remixicon/react";
+import MapComponent from "@/components/MapComponent";
 
-const MapComponent = () => {
-  const mapContainerRef = useRef(null); // Reference to the map container DOM element
-  const mapRef = useRef<Map | null>(null); // Reference to the OpenLayers map instance
+const Page = () => {
+  // Reference to the OpenLayers map instance
   const [activeIndex, setActiveIndex] = useState(null); // State to track the active button index
 
   // Array of links with their respective values, titles, and icons
@@ -31,32 +28,9 @@ const MapComponent = () => {
     console.log("Clicked index:", index); // Debugging log
   };
 
-  useEffect(() => {
-    // Initialize the OpenLayers map when the component mounts
-    if (!mapRef.current && mapContainerRef.current) {
-      mapRef.current = new Map({
-        target: mapContainerRef.current, // Target the map container
-        layers: [
-          new TileLayer({
-            source: new OSM(), // Use OpenStreetMap as the tile source
-          }),
-        ],
-        view: new View({
-          center: [85.324, 27.7172], // Set the map's center (longitude, latitude)
-          zoom: 7, // Set the initial zoom level
-          projection: "EPSG:4326", // Use WGS84 projection
-        }),
-      });
-    }
 
     // Cleanup function to destroy the map instance when the component unmounts
-    return () => {
-      if (mapRef.current) {
-        mapRef.current.setTarget(null); // Detach the map from the DOM
-        mapRef.current = null; // Clear the map reference
-      }
-    };
-  }, []);
+
 
   return (
     <div className="flex ">
@@ -116,14 +90,12 @@ const MapComponent = () => {
           </div>
         </div>
       </div>
+      <MapComponent/>
+</div>
 
-      {/* Map container */}
-      <div
-        ref={mapContainerRef} // Reference to the map container
-        className="w-300 h-[1080] relative " // Adjusted classes for better visibility
-      />
-    </div>
+
+
   );
 };
 
-export default MapComponent; // Export the component
+export default Page; // Export the component
