@@ -67,7 +67,7 @@ const MapComponent = () => {
         controls: [
           new ScaleLine(),
           new LayerSwitcher({
-            activationMode: "click",
+            activationMode: "mouseover",
             startActive: false,
             groupSelectStyle: "children",
           }),
