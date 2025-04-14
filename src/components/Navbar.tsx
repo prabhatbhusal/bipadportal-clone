@@ -18,7 +18,7 @@ import {
 } from "@remixicon/react";
 
 const Navbar = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const links = [
     { name: "DashBoard", url: "/dashboard", imgurl: "/home-2-fill.svg" },
@@ -64,9 +64,9 @@ const Navbar = () => {
       titlecontent: "",
     },
   ];
-  const handleClick = (index: number | React.SetStateAction<null>) => {
+  const handleClick = (index: number) => {
     setActiveIndex(index);
-    console.log("Clicked index:", index); // Add this to debug
+    console.log("Clicked index:", index); // Debugging log
   };
 
   const [isvisible,setisvisible]=useState(false)
@@ -77,7 +77,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className="flex flex-col justify-center font-bold text-[10px]  overflow-x-hidden h-full bg-blue-800">
+    <nav className="flex flex-col justify-center font-bold text-[9px]  overflow-x-hidden h-full bg-blue-800">
       <div className="">
         <div className=" flex flex-col justify-center items-center ml-460 text-gray-500 fixed z-1">
           {links.map((link, idx) => (

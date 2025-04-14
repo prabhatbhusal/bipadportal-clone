@@ -6,7 +6,7 @@
 /* In your global CSS file */
 .map {
   width: 20%;
-  height: 100%;
+  height: 80%;
 }
 
 @theme inline {
@@ -124,14 +124,7 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    
   }
 }
-.ol-zoom {
-  position:absolute;
-  margin-left:1160px;
-  margin-top:1000px;
 
-}
-.ol-layerswitcher{
-  margin-right:200px;
-}

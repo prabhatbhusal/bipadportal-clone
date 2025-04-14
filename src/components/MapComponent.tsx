@@ -86,7 +86,7 @@ const MapComponent = () => {
 
   return (
     <div>
-      <div ref={mapContainerRef} className="w-300 h-[1080] relative" />
+      <div ref={mapContainerRef} className="w-300 h-[1080px] relative" />
     </div>
   );
 };
