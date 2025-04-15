@@ -2,12 +2,15 @@
 import { useEffect, useRef } from "react";
 import Map from "ol/Map";
 import View from "ol/View";
+import FullScreen from 'ol/control/FullScreen.js';
+
 import TileLayer from "ol/layer/Tile";
 import LayerGroup from "ol/layer/Group";
 import OSM from "ol/source/OSM";
 import XYZ from "ol/source/XYZ";
 import ArcGIS from "ol/source/TileArcGISRest";
 import LayerSwitcher from "ol-layerswitcher";
+
 import { BaseLayerOptions, GroupLayerOptions } from "ol-layerswitcher";
 import ScaleLine from "ol/control/ScaleLine";
 import "ol/ol.css";
@@ -60,11 +63,14 @@ const MapComponent = () => {
         target: mapContainerRef.current,
         layers: [baseLayerGroup],
         view: new View({
-          center: [-100, 40], // USA for testing
-          zoom: 4,
+          center: [27.7103, 85.3222],
           projection: "EPSG:4326",
+          zoom: 4,
+          minZoom: 4,
+          maxZoom: 13,
         }),
         controls: [
+          
           new ScaleLine(),
           new LayerSwitcher({
             activationMode: "mouseover",
@@ -72,6 +78,8 @@ const MapComponent = () => {
             groupSelectStyle: "children",
           }),
         ],
+
+
       });
     }
 
